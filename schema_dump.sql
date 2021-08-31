@@ -7,8 +7,9 @@ DROP TABLE IF EXISTS `band`;
 CREATE TABLE `band` (
   `band_id` smallint NOT NULL AUTO_INCREMENT,
   `band_name` varchar(30) DEFAULT NULL,
-  `band_level` tinyint UNIQUE,
-  PRIMARY KEY (`band_id`)
+  `band_level` tinyint DEFAULT NULL,
+  PRIMARY KEY (`band_id`),
+  UNIQUE KEY `band_level` (`band_level`)
 );
 
 --
@@ -57,6 +58,7 @@ CREATE TABLE `training` (
   `name` varchar(100) DEFAULT NULL,
   `type` varchar(100) DEFAULT NULL,
   `description` varchar(300) DEFAULT NULL,
+  `training_url` varchar(700) DEFAULT NULL,
   PRIMARY KEY (`training_id`)
 );
 

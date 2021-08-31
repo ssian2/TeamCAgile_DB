@@ -3,7 +3,7 @@
 --
 
 LOCK TABLES `band` WRITE;
-INSERT INTO `band` VALUES (1,'test band name'),(2,'Apprentice'),(3,'Trainee'),(4,'Associate'),(5,'Senior Associate'),(6,'Consultant'),(7,'Manager'),(8,'Principal');
+INSERT INTO `band` VALUES (1,'test band name',9),(2,'Apprentice',8),(3,'Trainee',7),(4,'Associate',6),(5,'Senior Associate',5),(6,'Consultant',4),(7,'Manager',3),(8,'Principal',2),(9,'Leadership Community',1),(10,'Executive',0);
 UNLOCK TABLES;
 
 --
@@ -35,6 +35,7 @@ UNLOCK TABLES;
 --
 
 LOCK TABLES `training` WRITE;
+INSERT INTO `training` VALUES (2,'Effective Time Management','Professional Skills','Identify what effective time management looks like\n','https://kainossoftwareltd.sharepoint.com/L%26D/SitePages/Time-Management.aspx'),(3,'Some Technical Training','Technical Skills','Learn more about how to improve your tehcnical skills','https://kainossoftwareltd.sharepoint.com/L%26D/SitePages/Time-Management.aspx'),(4,'Some Development Training','Development Programmes','Identify the benefits on developing new skills','https://kainossoftwareltd.sharepoint.com/L%26D/SitePages/Time-Management.aspx');
 UNLOCK TABLES;
 
 --
@@ -53,8 +54,8 @@ INSERT INTO `job_family` VALUES
 (10,'Platform Engineering',2),
 (11,'Product Consultancy',4),
 (12,'Testing and Quality Assurance',5),
- (13,'Digital Advisory Consultancy', 4),
-        (14,'Specialist Consultancy', 4);
+(13,'Digital Advisory Consultancy', 4),
+(14,'Specialist Consultancy', 4);
 UNLOCK TABLES;
 
 --
@@ -62,6 +63,7 @@ UNLOCK TABLES;
 --
 
 LOCK TABLES `band_training` WRITE;
+INSERT INTO `band_training` VALUES (2,1,2),(3,1,3),(4,2,3),(6,6,3),(7,4,4);
 UNLOCK TABLES;
 
 --
@@ -78,15 +80,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `employee_role` WRITE;
 INSERT INTO `employee_role` 
-VALUES (1,'test role','test spec','google.com',1,1,1,9),
-(2,'Test Engineer','As a Test Engineer (Associate) in Kainos, you’ll be responsible for good quality of the software',NULL,4,1,12),
-(5,'Software Engineer','As a Software Engineer in Kainos, you’ll be responsible for\n developing high quality solutions which delight our customers and impact the lives of users worldwide.',NULL,3,1,3),
-(6,'Software Engineer','As a Software Engineer in Kainos, you’ll be responsible for\n developing high quality solutions which delight our customers and impact the lives of users worldwide.','https://kainossoftwareltd.sharepoint.com/people/Job%20Specifications/Forms/AllItems.aspx?id=%2Fpeople%2FJob%20Specifications%2FEngineering%2FJob%20profile%20%2D%20Software%20Engineer%20%28Associate%29%2Epdf&parent=%2Fpeople%2FJob%20Specifications%2FEngineering&p=true&originalPath=aHR0cHM6Ly9rYWlub3Nzb2Z0d2FyZWx0ZC5zaGFyZXBvaW50LmNvbS86YjovZy9wZW9wbGUvRVlUQ3Yxc3NsNnBPdUg1OXpYdG9GOVlCOHFOYUVNTlNrWklrQ3RoREFZNUtqZz9ydGltZT1sWEpNc29SbzJVZw',5,4,1,7),
-(7,'Product Specialist','As a Product Specialist at Kainos you will be responsible for delivering high quality solutions which delight our customers and\nimpact the lives of users worldwide.',NULL,8,1,11),
-('Digital Advisory Consultant', 'Work with delivery managers and solution architects to shape the approach for the work you and the wider team undertakes',NULL,7, 2,13),
-('Specialist Consultant', 'Work with delivery managers and solution architects to shape the approach for the work you and the wider team undertakes',NULL,7, 2,14),
-('Digital Advisory Consultant', 'Work with delivery managers and solution architects to shape the approach for the work you and the wider team undertakes',NULL,9, 2,13),
-('Specialist Consultant', 'Work with delivery managers and solution architects to shape the approach for the work you and the wider team undertakes',NULL,9, 2,14);
+VALUES (1,'test role','test spec','google.com',1,1,9),(2,'Test Engineer','As a Test Engineer (Associate) in Kainos, you’ll be responsible for good quality of the software',NULL,4,1,12),(5,'Software Engineer','As a Software Engineer in Kainos, you’ll be responsible for\n developing high quality solutions which delight our customers and impact the lives of users worldwide.',NULL,3,1,3),(6,'Software Engineer','As a Software Engineer in Kainos, you’ll be responsible for\n developing high quality solutions which delight our customers and impact the lives of users worldwide.','https://kainossoftwareltd.sharepoint.com/people/Job%20Specifications/Forms/AllItems.aspx?id=%2Fpeople%2FJob%20Specifications%2FEngineering%2FJob%20profile%20%2D%20Software%20Engineer%20%28Associate%29%2Epdf&parent=%2Fpeople%2FJob%20Specifications%2FEngineering&p=true&originalPath=aHR0cHM6Ly9rYWlub3Nzb2Z0d2FyZWx0ZC5zaGFyZXBvaW50LmNvbS86YjovZy9wZW9wbGUvRVlUQ3Yxc3NsNnBPdUg1OXpYdG9GOVlCOHFOYUVNTlNrWklrQ3RoREFZNUtqZz9ydGltZT1sWEpNc29SbzJVZw',4,1,7),(7,'Product Specialist','As a Product Specialist at Kainos you will be responsible for delivering high quality solutions which delight our customers and\nimpact the lives of users worldwide.',NULL,8,1,11),(8,'Digital Advisory Consultant','Work with delivery managers and solution architects to shape the approach for the work you and the wider team undertakes',NULL,8,2,13),(9,'Specialist Consultant','Work with delivery managers and solution architects to shape the approach for the work you and the wider team undertakes',NULL,8,2,14),(10,'Digital Advisory Consultant','Work with delivery managers and solution architects to shape the approach for the work you and the wider team undertakes',NULL,7,2,13),(11,'Specialist Consultant','Work with delivery managers and solution architects to shape the approach for the work you and the wider team undertakes',NULL,7,2,14);
 UNLOCK TABLES;
 
 --
