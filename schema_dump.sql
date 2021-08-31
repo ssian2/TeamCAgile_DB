@@ -7,6 +7,7 @@ DROP TABLE IF EXISTS `band`;
 CREATE TABLE `band` (
   `band_id` smallint NOT NULL AUTO_INCREMENT,
   `band_name` varchar(30) DEFAULT NULL,
+  `band_level` tinyint UNIQUE,
   PRIMARY KEY (`band_id`)
 );
 
@@ -117,16 +118,15 @@ CREATE TABLE `employee_role` (
   `role_name` varchar(40) NOT NULL,
   `specification` varchar(300) DEFAULT NULL,
   `spec_doc_url` varchar(700) DEFAULT NULL,
-  `capability_id` smallint DEFAULT NULL,
   `band_id` smallint NOT NULL,
   `job_family_id` smallint DEFAULT NULL,
   PRIMARY KEY (`role_id`),
   KEY `band_id` (`band_id`),
-  KEY `capability_id` (`capability_id`),
+  KEY `responsibility_id` (`responsibility_id`),
   KEY `job_family_id` (`job_family_id`),
   CONSTRAINT `employee_role_ibfk_1` FOREIGN KEY (`band_id`) REFERENCES `band` (`band_id`),
-  CONSTRAINT `employee_role_ibfk_2` FOREIGN KEY (`capability_id`) REFERENCES `capability` (`capability_id`),
-  CONSTRAINT `employee_role_ibfk_4` FOREIGN KEY (`job_family_id`) REFERENCES `job_family` (`job_family_id`)
+  CONSTRAINT `employee_role_ibfk_2` FOREIGN KEY (`responsibility_id`) REFERENCES `responsibility` (`responsibility_id`),
+  CONSTRAINT `employee_role_ibfk_3` FOREIGN KEY (`job_family_id`) REFERENCES `job_family` (`job_family_id`)
 );
 
 --
