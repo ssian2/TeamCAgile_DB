@@ -116,16 +116,13 @@ CREATE TABLE `employee_role` (
   `spec_doc_url` varchar(700) DEFAULT NULL,
   `capability_id` smallint DEFAULT NULL,
   `band_id` smallint NOT NULL,
-  `responsibility_id` smallint NOT NULL,
   `job_family_id` smallint DEFAULT NULL,
   PRIMARY KEY (`role_id`),
   KEY `band_id` (`band_id`),
   KEY `capability_id` (`capability_id`),
-  KEY `responsibility_id` (`responsibility_id`),
   KEY `job_family_id` (`job_family_id`),
   CONSTRAINT `employee_role_ibfk_1` FOREIGN KEY (`band_id`) REFERENCES `band` (`band_id`),
   CONSTRAINT `employee_role_ibfk_2` FOREIGN KEY (`capability_id`) REFERENCES `capability` (`capability_id`),
-  CONSTRAINT `employee_role_ibfk_3` FOREIGN KEY (`responsibility_id`) REFERENCES `responsibility` (`responsibility_id`),
   CONSTRAINT `employee_role_ibfk_4` FOREIGN KEY (`job_family_id`) REFERENCES `job_family` (`job_family_id`)
 );
 
